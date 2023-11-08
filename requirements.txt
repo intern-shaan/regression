@@ -6,5 +6,6 @@ mlflow
 psycopg2-binary
 argparse
 jupyterlab
-sklearn
 mlflow
+django
+sklearn
