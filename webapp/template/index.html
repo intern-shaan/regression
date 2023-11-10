@@ -23,22 +23,52 @@
 <center><h1><span style="color:#FF0000">Medical Expenses App </span></h1>
     <center><h3>Please Enter the Data</h3></center> <br>
 
-    <form action="{% url 'result' %}">
+    <form action="{% url 'result' %}" method="get">
         {% csrf_token %}
-
         <table align="center">
-            <tr><td>Age:<td><input type="text" required name="age"></td></tr>
-            <tr><td>Sex:<td><input type="text" required name="sex"></td></tr>
-            <tr><td>BMI:<td><input type="text" required name="bmi"></td></tr>
-            <tr><td>Childrens:<td><input type="text" required name="children"></td></tr>
-            <tr><td>Smoker:<td><input type="text" required name="smoker"></td></tr>
-            <tr><td>Region:<td><input type="text" required name="region"></td></tr>
+            <tr><td>Age:</td><td><input type="text" required name="age"></td></tr>
+            
+            <tr>
+                <td>Sex:</td>
+                <td>
+                    <select name="sex" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                </td>
+            </tr>
+    
+            <tr><td>BMI:</td><td><input type="text" required name="bmi"></td></tr>
+            <tr><td>Children:</td><td><input type="text" required name="children"></td></tr>
+            
+            <tr>
+                <td>Smoker:</td>
+                <td>
+                    <select name="smoker" required>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>Region:</td>
+                <td>
+                    <select name="region" required>
+                        <option value="southwest">southwest</option>
+                        <option value="southeast">southeast</option>
+                        <option value="northwest">northwest</option>
+                        <option value="northeast">northeast</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                </td>
+            </tr>
         </table>
-
-        <center><button type="submit" name="" value="submit" class="button button1">Submit</button></center>
-        <center><button type="reset" name="" value="reset" class="button button1">Reset</button></center>
+        <center><button type="submit" name="submit" value="submit" class="button button1">Submit</button></center>
+        <center><button type="reset" name="reset" value="reset" class="button button1">Reset</button></center>
     </form>
-
+    
     {% if answer %}
 
     <center><h2 style="color:#FF6600"> The Medical Expenses is {{answer}} Dollars</h2>

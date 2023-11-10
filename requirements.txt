@@ -9,3 +9,4 @@ jupyterlab
 mlflow
 django
 sklearn
+tensorflow
