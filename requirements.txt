@@ -10,3 +10,4 @@ mlflow
 django
 sklearn
 tensorflow
+seaborn
