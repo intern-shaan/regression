@@ -2,19 +2,22 @@ from django.contrib import admin
 from django.urls import path, include
 from firstApp import views
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('index/', views.index, name='index'),
-    path('result/', views.result, name='result'),
-    path('', views.SignupPage, name='signup'),
-    path('login/', views.LoginPage, name='login'),
-    path('logout/', views.LogoutPage, name='logout'),    
-]
 # urlpatterns = [
 #     path('admin/', admin.site.urls),
 #     path('index/', views.index, name='index'),
-#     path('result/', views.result, name='result'),  # Change the URL pattern to 'result'
-#     path('signup/', views.SignupPage, name='signup'),  # Change the URL pattern to 'signup'
+#     path('result/', views.result, name='result'),
+#     path('', views.SignupPage, name='signup'),
 #     path('login/', views.LoginPage, name='login'),
-#     path('logout/', views.LogoutPage, name='logout'),
+#     path('logout/', views.LogoutPage, name='logout'),    
 # ]
+
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', views.index, name='index'),
+    path('index/', views.result, name='result'),
+    path('', views.SignupPage, name='signup'),
+    path('login/', views.LoginPage, name='login'),
+    path('logout/', views.LogoutPage, name='logout'),
+    path('index_deep/', views.index_deep, name='deep'),    
+]
